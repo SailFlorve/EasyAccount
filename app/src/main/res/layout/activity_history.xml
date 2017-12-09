@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.hdu.easyaccount.HistoryActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_year"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:contentInsetStart="0dp"
+        app:layout_collapseMode="pin">
+
+        <ImageView
+            android:id="@+id/back_img_year"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_back_brown" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/activity_year_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/account_history_title"
+                android:textColor="@color/colorBrown"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/choose_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="15dp"
+                android:text="@string/choose_year"
+                android:textColor="@color/colorBrown"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结余￥"
+                android:textColor="@color/colorBrown" />
+
+            <TextView
+                android:id="@+id/year_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-1232.00"
+                android:textColor="@color/colorBrown"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:columnCount="2"
+            app:rowCount="2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月平均收入"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/month_aver_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1102.00"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月平均支出"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/month_aver_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1884.00"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年收入"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/year_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1242.00"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年支出"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/year_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥6794.00"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </android.support.v7.widget.GridLayout>
+
+    </LinearLayout>
+
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/year_line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="5dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/month_data_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hdu.easyaccount.VerifyActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.95"
+        android:scaleType="fitEnd"
+        android:src="@drawable/bg_mountain" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="登录验证" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/verify_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="输入手势密码"
+            android:textColor="@color/colorBrown"
+            android:textSize="20sp" />
+
+        <com.takwolf.android.lock9.Lock9View
+            android:id="@+id/lock_9_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="45dp"
+            app:lock9_autoLink="true"
+            app:lock9_lineColor="@color/colorBrownLight"
+            app:lock9_lineWidth="4dp"
+            app:lock9_nodeAreaExpand="25dp"
+            app:lock9_nodeOnSrc="@drawable/node_small_active"
+            app:lock9_nodeSize="32dp"
+            app:lock9_nodeSrc="@drawable/node_small_normal" />
+    </RelativeLayout>
+</RelativeLayout>

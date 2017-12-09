@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hdu.easyaccount.RecordActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_month"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:contentInsetStart="0dp">
+
+        <ImageView
+            android:id="@+id/back_img_month"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_back_brown" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="添加记录"
+                android:textColor="@color/colorBrown"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/save_text_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="15dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="保存"
+                android:textColor="@color/colorBrown"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout_record"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        app:tabIndicatorColor="#fff"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorBrown"
+        app:tabTextColor="@color/colorBrownLight">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_record"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancel_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            android:text="取消"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/save_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimaryDark"
+            android:text="保存"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+</LinearLayout>

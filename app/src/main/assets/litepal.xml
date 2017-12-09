@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value="User"/>
+    <version value="5"/>
+    <list>
+        <mapping class="com.hdu.easyaccount.bean.db.UserInfo"/>
+        <mapping class="com.hdu.easyaccount.bean.db.AccountInfo"/>
+    </list>
+</litepal>

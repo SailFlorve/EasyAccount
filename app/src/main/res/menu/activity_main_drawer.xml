@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/account_overview"
+            android:icon="@drawable/ic_overview"
+            android:title="账单概览" />
+        <item
+            android:id="@+id/account_history"
+            android:icon="@drawable/ic_history"
+            android:title="年账单流水" />
+    </group>
+
+    <item android:title="其他">
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings"
+                android:title="设置" />
+            <item
+                android:id="@+id/quit"
+                android:icon="@drawable/ic_exit"
+                android:title="退出" />
+        </menu>
+    </item>
+
+</menu>

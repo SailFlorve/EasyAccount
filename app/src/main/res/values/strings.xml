@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">简单记账</string>
+    <string name="version_info">简单记账——最高效率的记账助手</string>
+    <string name="today_account">-- 今日账单记录 --</string>
+    <string name="other_account">-- 近期账单记录 --</string>
+    <string name="no_today_account">还没有记账记录哦！</string>
+    <string name="no_account">没有记录哦！</string>
+    <string name="record_now">马上记账 ></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="none_type">未选择分类</string>
+    <string name="zero">0.00</string>
+    <string name="choose_year">选择年份</string>
+    <string name="account_history_title">年流水</string>
+    <string name="account_this_month">本月账单</string>
+    <string name="show_month_data">显示月数据</string>
+    <string-array name="default_expense_type">
+        <item>早中晚餐</item>
+        <item>副食烟酒</item>
+        <item>逛街购物</item>
+        <item>交通出行</item>
+        <item>休闲娱乐</item>
+        <item>其他支出</item>
+    </string-array>
+    <string-array name="default_income_type">
+        <item>工资收入</item>
+        <item>奖金礼金</item>
+        <item>经营收入</item>
+        <item>其他收入</item>
+    </string-array>
+    <string-array name="default_expense_type_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="default_income_type_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
