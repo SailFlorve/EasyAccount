@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.hdu.easyaccount.adapters.AccountRecyclerViewAdapter;
 import com.hdu.easyaccount.constant.Type;
 import com.hdu.easyaccount.bean.db.AccountInfo;
-import com.hdu.easyaccount.utils.AccountFindHelper;
+import com.hdu.easyaccount.utils.AccountDAO;
 import com.hdu.easyaccount.utils.Utility;
 
 import org.litepal.crud.ClusterQuery;
@@ -37,6 +37,7 @@ import lecho.lib.hellocharts.model.PieChartData;
 import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.SliceValue;
 import lecho.lib.hellocharts.model.Viewport;
+import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.LineChartView;
 import lecho.lib.hellocharts.view.PieChartView;
 
@@ -122,11 +123,11 @@ public class MonthAccountActivity extends BaseActivity {
                 showAllDataButton.setVisibility(View.VISIBLE);
                 List<AccountInfo> list;
                 if (dataType.equals(Type.TYPE_ALL)) {
-                    list = AccountFindHelper.where("year = ? and month = ? and day = ?",
+                    list = AccountDAO.where("year = ? and month = ? and day = ?",
                             mYear, mMonth, String.valueOf(pointIndex + 1));
 
                 } else {
-                    list = AccountFindHelper.where("year = ? and month = ? " +
+                    list = AccountDAO.where("year = ? and month = ? " +
                                     "and day = ? and type = ?",
                             mYear, mMonth, String.valueOf(pointIndex + 1), dataType);
                 }
@@ -204,7 +205,7 @@ public class MonthAccountActivity extends BaseActivity {
                     .sum(AccountInfo.class, "money", Float.class);
             if (money != 0f) {
                 values.add(new SliceValue(money,
-                        ContextCompat.getColor(this, R.color.colorBrown))
+                        ChartUtils.pickColor())
                         .setLabel(anExpenseTypeArray));
             }
         }
@@ -213,7 +214,7 @@ public class MonthAccountActivity extends BaseActivity {
         pieChartData.setHasLabels(true);
         pieChartData.setHasLabelsOnlyForSelected(false);
         pieChartData.setHasLabelsOutside(false);
-        pieChartData.setHasCenterCircle(false);
+        pieChartData.setHasCenterCircle(true);
         pieChartData.setValueLabelTextSize(10);
         pieChartData.setSlicesSpacing(1);//设置分离距离
         //饼图属性设置
@@ -330,10 +331,10 @@ public class MonthAccountActivity extends BaseActivity {
         List<AccountInfo> list;
         //如果为全部类型,where条件中不添加类型限定
         if (type.equals(Type.TYPE_ALL)) {
-            list = AccountFindHelper.where("year = ? and month = ?",
+            list = AccountDAO.where("year = ? and month = ?",
                     mYear, mMonth);
         } else {
-            list = AccountFindHelper.where("year = ? and month = ? and type = ?",
+            list = AccountDAO.where("year = ? and month = ? and type = ?",
                     mYear, mMonth, dataType);
         }
         return list;

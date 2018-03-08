@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">简单记账</string>
-    <string name="version_info">简单记账——最高效率的记账助手</string>
+    <string name="version_info">简单记账——最高效率的记账助手\n\n注意: 注册账号仅用于本地账户区分。</string>
     <string name="today_account">-- 今日账单记录 --</string>
     <string name="other_account">-- 近期账单记录 --</string>
     <string name="no_today_account">还没有记账记录哦！</string>

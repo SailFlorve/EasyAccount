@@ -29,14 +29,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.hdu.easyaccount.adapters.AccountRecyclerViewAdapter;
 import com.hdu.easyaccount.bean.db.AccountInfo;
 import com.hdu.easyaccount.constant.Type;
-import com.hdu.easyaccount.utils.AccountFindHelper;
+import com.hdu.easyaccount.utils.AccountDAO;
 import com.hdu.easyaccount.utils.Utility;
 import com.hdu.easyaccount.view.GradeProgressView;
 import com.john.waveview.WaveView;
 
 import org.litepal.LitePal;
 import org.litepal.LitePalDB;
-import org.litepal.crud.DataSupport;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -92,37 +91,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         setToolbar(R.id.toolbar_main, false);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navView = (NavigationView) findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        navView = findViewById(R.id.nav_view);
         navView.getMenu().getItem(0).setChecked(true);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        navHeaderUserLayout = (LinearLayout) navView.getHeaderView(0)
+        fab = findViewById(R.id.fab);
+        navHeaderUserLayout = navView.getHeaderView(0)
                 .findViewById(R.id.nav_header_username_layout);
-        monthTotalLayout = (LinearLayout) findViewById(R.id.month_total_layout);
-        showTodayText = (TextView) findViewById(R.id.show_today_text);
-        menuBgImg = (ImageView) navView.getHeaderView(0)
+        monthTotalLayout = findViewById(R.id.month_total_layout);
+        showTodayText = findViewById(R.id.show_today_text);
+        menuBgImg = navView.getHeaderView(0)
                 .findViewById(R.id.menu_bg_img);
-        menuButton = (ImageView) findViewById(R.id.menu_button);
-        profileImg = (CircleImageView) navView.getHeaderView(0)
+        menuButton = findViewById(R.id.menu_button);
+        profileImg = navView.getHeaderView(0)
                 .findViewById(R.id.profile_img);
-        toolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        navHeaderText = (TextView) navView.getHeaderView(0).findViewById(R.id.nav_header_text);
-        progressView = (GradeProgressView) findViewById(R.id.progress_view);
-        waveView = (WaveView) findViewById(R.id.wave_view);
-        recordNowCard = (CardView) findViewById(R.id.record_now_card);
-        monthTotalIncomeText = (TextView) findViewById(R.id.month_total_income);
-        monthTotalExpenseText = (TextView) findViewById(R.id.month_total_expense);
-        budgetSurplusText = (TextView) findViewById(R.id.budget_surplus_text);
-        weekBalanceText = (TextView) findViewById(R.id.week_balance_text);
-        weekIncomeText = (TextView) findViewById(R.id.week_income_text);
-        weekExpenseText = (TextView) findViewById(R.id.week_expense_text);
-        accountRecordText = (TextView) findViewById(R.id.account_record_text);
-        monthBalanceText = (TextView) findViewById(R.id.month_balance_text);
-        monthIncomeText = (TextView) findViewById(R.id.month_income_text);
-        monthExpenseText = (TextView) findViewById(R.id.month_expense_text);
-        todayRecyclerView = (RecyclerView) findViewById(R.id.today_account_list);
-        weekAccountCard = (CardView) findViewById(R.id.week_account_card);
-        monthAccountCard = (CardView) findViewById(R.id.month_account_card);
+        toolbarLayout = findViewById(R.id.toolbar_layout);
+        navHeaderText = navView.getHeaderView(0).findViewById(R.id.nav_header_text);
+        progressView = findViewById(R.id.progress_view);
+        waveView = findViewById(R.id.wave_view);
+        recordNowCard = findViewById(R.id.record_now_card);
+        monthTotalIncomeText = findViewById(R.id.month_total_income);
+        monthTotalExpenseText = findViewById(R.id.month_total_expense);
+        budgetSurplusText = findViewById(R.id.budget_surplus_text);
+        weekBalanceText = findViewById(R.id.week_balance_text);
+        weekIncomeText = findViewById(R.id.week_income_text);
+        weekExpenseText = findViewById(R.id.week_expense_text);
+        accountRecordText = findViewById(R.id.account_record_text);
+        monthBalanceText = findViewById(R.id.month_balance_text);
+        monthIncomeText = findViewById(R.id.month_income_text);
+        monthExpenseText = findViewById(R.id.month_expense_text);
+        todayRecyclerView = findViewById(R.id.today_account_list);
+        weekAccountCard = findViewById(R.id.week_account_card);
+        monthAccountCard = findViewById(R.id.month_account_card);
 
         fab.setOnClickListener(this);
         menuButton.setOnClickListener(this);
@@ -191,7 +190,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.week_account_card:
                 showTodayText.setVisibility(View.VISIBLE);
                 List<AccountInfo> infoList =
-                        AccountFindHelper.quickFind(Type.ACCOUNT_THIS_WEEK);
+                        AccountDAO.quickFind(Type.ACCOUNT_THIS_WEEK);
                 adapter.setDateType(AccountRecyclerViewAdapter.SHOW_DATE_WEEKDAY);
                 weekAccountCard.setEnabled(false);
                 setList(infoList);
@@ -316,7 +315,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      * 设置标题栏数据
      */
     private void setHeaderData() {
-        List<AccountInfo> infoList = AccountFindHelper.quickFind(Type.ACCOUNT_THIS_MONTH);
+        List<AccountInfo> infoList = AccountDAO.quickFind(Type.ACCOUNT_THIS_MONTH);
         monthTotalIncomeText.setText("￥"
                 + Utility.getAccountMoneyNum(infoList, Type.ACCOUNT_TOTAL_INCOME));
         monthTotalExpenseText.setText("￥"
@@ -344,13 +343,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         List<AccountInfo> infoList;
         //设置TodayRecyclerView
         if (showTodayText.getVisibility() == View.VISIBLE) {
-            infoList = AccountFindHelper.quickFind(Type.ACCOUNT_THIS_WEEK);
+            infoList = AccountDAO.quickFind(Type.ACCOUNT_THIS_WEEK);
         } else {
-            infoList = AccountFindHelper.quickFind(Type.ACCOUNT_TODAY);
+            infoList = AccountDAO.quickFind(Type.ACCOUNT_TODAY);
         }
         setList(infoList);
         //设置本周账单卡片
-        infoList = AccountFindHelper.quickFind(Type.ACCOUNT_THIS_WEEK);
+        infoList = AccountDAO.quickFind(Type.ACCOUNT_THIS_WEEK);
         weekBalanceText.setText("结余 ￥" + Utility.getAccountMoneyNum(
                 infoList, Type.ACCOUNT_BALANCE));
         weekIncomeText.setText("+" + Utility.getAccountMoneyNum(
@@ -358,7 +357,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         weekExpenseText.setText("-" + Utility.getAccountMoneyNum(
                 infoList, Type.ACCOUNT_TOTAL_EXPENSE));
         //设置月账单卡片
-        infoList = AccountFindHelper.quickFind(Type.ACCOUNT_THIS_MONTH);
+        infoList = AccountDAO.quickFind(Type.ACCOUNT_THIS_MONTH);
 
         monthBalanceText.setText("结余 ￥" + Utility.getAccountMoneyNum(
                 infoList, Type.ACCOUNT_BALANCE));

@@ -15,7 +15,7 @@ import java.util.Locale;
  * 数据库查找操作的封装类.
  */
 
-public class AccountFindHelper {
+public class AccountDAO {
     /**
      * 根据条件查找
      *

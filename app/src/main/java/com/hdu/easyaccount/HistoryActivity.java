@@ -8,21 +8,17 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.hdu.easyaccount.adapters.MonthDataRecyclerViewAdapter;
 import com.hdu.easyaccount.bean.MonthData;
 import com.hdu.easyaccount.constant.Type;
 import com.hdu.easyaccount.bean.db.AccountInfo;
-import com.hdu.easyaccount.utils.AccountFindHelper;
+import com.hdu.easyaccount.utils.AccountDAO;
 import com.hdu.easyaccount.utils.Utility;
-
-import org.litepal.crud.DataSupport;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -123,7 +119,7 @@ public class HistoryActivity extends BaseActivity {
      * 设置顶部标题栏,折线图以及RecyclerView的数据
      */
     private void setAllData() {
-        yearList = AccountFindHelper.where("year = ?", mYear);
+        yearList = AccountDAO.where("year = ?", mYear);
         setHeaderData();
         setLineChartData();
         setRecyclerView();
@@ -152,7 +148,7 @@ public class HistoryActivity extends BaseActivity {
         //遍历每个月,获取数值.
         for (int i = 0; i < 12; i++) {
             axisValues.add(new AxisValue(i).setLabel(String.valueOf(i + 1) + "月"));
-            List<AccountInfo> list = AccountFindHelper.where(
+            List<AccountInfo> list = AccountDAO.where(
                     "year = ? and month = ?",
                     mYear, String.valueOf(i + 1));
             if (list.isEmpty()) {
@@ -208,7 +204,7 @@ public class HistoryActivity extends BaseActivity {
         //遍历每个月,获取数据
         for (int i = totalMonth; i >= 1; i--) {
             String month = String.valueOf(i);
-            List<AccountInfo> monthList = AccountFindHelper.where(
+            List<AccountInfo> monthList = AccountDAO.where(
                     "year = ? and month = ?", mYear, month);
             MonthData data = new MonthData(mYear, month, monthList);
             monthDataList.add(data);
@@ -217,7 +213,7 @@ public class HistoryActivity extends BaseActivity {
     }
 
     private void chooseAndSetYearData() {
-        List<AccountInfo> list = AccountFindHelper.select("year");
+        List<AccountInfo> list = AccountDAO.select("year");
         List<String> yearList = new ArrayList<>();
         //得到数据库中所有年份的List
         for (AccountInfo info : list) {

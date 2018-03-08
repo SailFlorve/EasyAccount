@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:scaleType="fitEnd"
+                android:adjustViewBounds="true"
                 android:src="@drawable/bg_mountain"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.8" />
