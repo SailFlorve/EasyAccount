@@ -58,8 +58,8 @@ public class WelcomeActivity extends BaseActivity {
         }
 
         setContentView(R.layout.activity_welcome);
-        Button loginButton = (Button) findViewById(R.id.to_login_button);
-        Button registerButton = (Button) findViewById(R.id.to_register_button);
+        Button loginButton = findViewById(R.id.to_login_button);
+        Button registerButton = findViewById(R.id.to_register_button);
         //使用存储了用户名和密码的数据库
         LitePal.useDefault();
 

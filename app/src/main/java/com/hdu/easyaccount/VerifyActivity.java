@@ -32,8 +32,8 @@ public class VerifyActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify);
         setToolbar(R.id.toolbar_verify, true);
-        Lock9View lock9View = (Lock9View) findViewById(R.id.lock_9_view);
-        verifyTip = (TextView) findViewById(R.id.verify_tip);
+        Lock9View lock9View = findViewById(R.id.lock_9_view);
+        verifyTip = findViewById(R.id.verify_tip);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             username = bundle.getString("username");

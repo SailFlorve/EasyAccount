@@ -50,7 +50,7 @@ public class AccountRecyclerViewAdapter extends BaseQuickAdapter<AccountInfo, Ba
     @Override
     protected void convert(BaseViewHolder helper, AccountInfo item) {
         //为每个类型设置图片
-        CircleImageView imageView = (CircleImageView) helper.getView(R.id.type_image_list_item);
+        CircleImageView imageView = helper.getView(R.id.type_image_list_item);
         int typeImgResId;
         switch (item.getType()) {
             case Type.MONEY_SPEND_ENTERTAINMENT:
@@ -109,7 +109,7 @@ public class AccountRecyclerViewAdapter extends BaseQuickAdapter<AccountInfo, Ba
         }
 
         //设置收入支出文字
-        TextView moneyText = (TextView) helper.getView(R.id.money_text_list_item);
+        TextView moneyText = helper.getView(R.id.money_text_list_item);
         if (item.isExpense()) {
             moneyText.setText("-" + Utility.formatNum(item.getMoney(), 2));
             moneyText.setTextColor(ContextCompat.getColor(mContext, R.color.colorGreen));

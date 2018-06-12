@@ -82,16 +82,16 @@ public class MonthAccountActivity extends BaseActivity {
             finish();
         }
         setToolbar(R.id.toolbar_month, false);
-        pieChartView = (PieChartView) findViewById(R.id.month_pie_chart_view);
-        monthAccountListView = (RecyclerView) findViewById(R.id.month_account_recycler_view);
-        balanceText = (TextView) findViewById(R.id.balance_text_activity_month);
-        incomeText = (TextView) findViewById(R.id.income_text_activity_month);
-        expenseText = (TextView) findViewById(R.id.expense_text_activity_month);
-        noAccountCard = (CardView) findViewById(R.id.month_no_account_card);
-        titleText = (TextView) findViewById(R.id.activity_month_title);
-        showAllDataButton = (Button) findViewById(R.id.show_month_data);
-        lineChartView = (LineChartView) findViewById(R.id.activity_month_line_chart_view);
-        backButton = (ImageView) findViewById(R.id.back_img_month);
+        pieChartView = findViewById(R.id.month_pie_chart_view);
+        monthAccountListView = findViewById(R.id.month_account_recycler_view);
+        balanceText = findViewById(R.id.balance_text_activity_month);
+        incomeText = findViewById(R.id.income_text_activity_month);
+        expenseText = findViewById(R.id.expense_text_activity_month);
+        noAccountCard = findViewById(R.id.month_no_account_card);
+        titleText = findViewById(R.id.activity_month_title);
+        showAllDataButton = findViewById(R.id.show_month_data);
+        lineChartView = findViewById(R.id.activity_month_line_chart_view);
+        backButton = findViewById(R.id.back_img_month);
 
         showAllDataButton.setVisibility(View.GONE);
         titleText.setText(mYear + "年" + mMonth + "月" + "账单");

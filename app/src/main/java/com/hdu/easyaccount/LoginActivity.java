@@ -35,9 +35,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginButton = (Button) findViewById(R.id.login_button);
-        usernameInputLayout = (TextInputLayout) findViewById(R.id.username_login_activity);
-        pwInputLayout = (TextInputLayout) findViewById(R.id.pw_login_activity);
+        loginButton = findViewById(R.id.login_button);
+        usernameInputLayout = findViewById(R.id.username_login_activity);
+        pwInputLayout = findViewById(R.id.pw_login_activity);
 
         setToolbar(R.id.toolbar_login, true);
         //设置返回按钮图标

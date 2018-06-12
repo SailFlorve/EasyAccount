@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,6 @@ import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +32,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
@@ -101,13 +98,13 @@ abstract public class BaseRecordFragment extends Fragment {
         prefs = new SharedPrefs(getContext());
         //初始化
         View view = inflater.inflate(R.layout.fragment_record, container, false);
-        moneyText = (EditText) view.findViewById(R.id.money_input_record);
-        classifyLayout = (LinearLayout) view.findViewById(R.id.money_classify_record);
-        classifyText = (TextView) view.findViewById(R.id.money_classify_text_record);
-        timeText = (TextView) view.findViewById(R.id.money_time_record);
-        remarkText = (EditText) view.findViewById(R.id.money_remark_record);
-        moneyInputLayout = (TextInputLayout) view.findViewById(R.id.money_input_layout_record);
-        timeLayout = (LinearLayout) view.findViewById(R.id.record_time_layout);
+        moneyText = view.findViewById(R.id.money_input_record);
+        classifyLayout = view.findViewById(R.id.money_classify_record);
+        classifyText = view.findViewById(R.id.money_classify_text_record);
+        timeText = view.findViewById(R.id.money_time_record);
+        remarkText = view.findViewById(R.id.money_remark_record);
+        moneyInputLayout = view.findViewById(R.id.money_input_layout_record);
+        timeLayout = view.findViewById(R.id.record_time_layout);
 
         return view;
     }

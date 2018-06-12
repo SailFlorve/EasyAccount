@@ -36,10 +36,10 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registerButton = (Button) findViewById(R.id.register_button);
-        usernameInputLayout = (TextInputLayout) findViewById(R.id.username_register_activity);
-        pwInputLayout = (TextInputLayout) findViewById(R.id.pw_register_activity);
-        pwEnsureLayout = (TextInputLayout) findViewById(R.id.pw_ensure_register_activity);
+        registerButton = findViewById(R.id.register_button);
+        usernameInputLayout = findViewById(R.id.username_register_activity);
+        pwInputLayout = findViewById(R.id.pw_register_activity);
+        pwEnsureLayout = findViewById(R.id.pw_ensure_register_activity);
 
         setToolbar(R.id.toolbar_register, true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);

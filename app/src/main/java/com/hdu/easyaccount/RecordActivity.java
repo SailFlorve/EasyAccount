@@ -44,12 +44,12 @@ public class RecordActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
         setToolbar(R.id.toolbar_month, false);
-        tabLayout = (TabLayout) findViewById(R.id.tab_layout_record);
-        viewPager = (ViewPager) findViewById(R.id.view_pager_record);
-        saveButton = (Button) findViewById(R.id.save_record);
-        cancelButton = (Button) findViewById(R.id.cancel_record);
-        backImg = (ImageView) findViewById(R.id.back_img_month);
-        saveText = (TextView) findViewById(R.id.save_text_record);
+        tabLayout = findViewById(R.id.tab_layout_record);
+        viewPager = findViewById(R.id.view_pager_record);
+        saveButton = findViewById(R.id.save_record);
+        cancelButton = findViewById(R.id.cancel_record);
+        backImg = findViewById(R.id.back_img_month);
+        saveText = findViewById(R.id.save_text_record);
         initTabLayout();
 
         Bundle extras = getIntent().getExtras();

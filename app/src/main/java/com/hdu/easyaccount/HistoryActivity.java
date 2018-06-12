@@ -61,16 +61,16 @@ public class HistoryActivity extends BaseActivity {
         setContentView(R.layout.activity_history);
         setToolbar(R.id.toolbar_year, false);
 
-        yearBalanceText = (TextView) findViewById(R.id.year_balance);
-        yearIncomeText = (TextView) findViewById(R.id.year_income);
-        yearExpenseText = (TextView) findViewById(R.id.year_expense);
-        monthAverExpenseText = (TextView) findViewById(R.id.month_aver_expense);
-        monthAverIncomeText = (TextView) findViewById(R.id.month_aver_income);
-        chooseYear = (TextView) findViewById(R.id.choose_year);
-        titleText = (TextView) findViewById(R.id.activity_year_title);
-        lineChartView = (LineChartView) findViewById(R.id.year_line_chart);
-        backImg = (ImageView) findViewById(R.id.back_img_year);
-        monthDataRecyclerView = (RecyclerView) findViewById(R.id.month_data_list_view);
+        yearBalanceText = findViewById(R.id.year_balance);
+        yearIncomeText = findViewById(R.id.year_income);
+        yearExpenseText = findViewById(R.id.year_expense);
+        monthAverExpenseText = findViewById(R.id.month_aver_expense);
+        monthAverIncomeText = findViewById(R.id.month_aver_income);
+        chooseYear = findViewById(R.id.choose_year);
+        titleText = findViewById(R.id.activity_year_title);
+        lineChartView = findViewById(R.id.year_line_chart);
+        backImg = findViewById(R.id.back_img_year);
+        monthDataRecyclerView = findViewById(R.id.month_data_list_view);
         //默认年份为当前
         mYear = Utility.getTime(Calendar.YEAR);
         initRecyclerView();

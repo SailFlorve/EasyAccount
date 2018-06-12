@@ -1,5 +1,6 @@
 package com.hdu.easyaccount;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -314,6 +315,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     /**
      * 设置标题栏数据
      */
+    @SuppressLint("SetTextI18n")
     private void setHeaderData() {
         List<AccountInfo> infoList = AccountDAO.quickFind(Type.ACCOUNT_THIS_MONTH);
         monthTotalIncomeText.setText("￥"
@@ -338,6 +340,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     /**
      * 设置RecyclerView.以及周和月卡片的数据
      */
+    @SuppressLint("SetTextI18n")
     private void setContentData() {
 
         List<AccountInfo> infoList;

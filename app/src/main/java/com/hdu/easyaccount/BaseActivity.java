@@ -17,7 +17,7 @@ import com.hdu.easyaccount.utils.ActivityManager;
 import com.hdu.easyaccount.utils.SharedPrefs;
 
 /**
- * 所有Activity的基类,封装了一些通用操作.
+ * 所有Activity的基类,封装了一些通用
  */
 
 public class BaseActivity extends AppCompatActivity {
